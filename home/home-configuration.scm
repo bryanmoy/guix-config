@@ -23,6 +23,7 @@
         "nushell"
         "jujutsu"
         "git"
+        "podman"
         "rust"
         "rust:cargo"
         "rust-analyzer"
