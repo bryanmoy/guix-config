@@ -24,6 +24,7 @@
         "jujutsu"
         "git"
         "rust"
+        "rust:cargo"
         "rust-analyzer"
         "node")))
 
