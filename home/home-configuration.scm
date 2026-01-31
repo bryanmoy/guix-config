@@ -23,6 +23,8 @@
         "nushell"
         "jujutsu"
         "git"
+        "rust"
+        "rust-analyzer"
         "node")))
 
   ;; Below is the list of Home services.  To search for available
