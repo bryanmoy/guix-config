@@ -14,7 +14,6 @@
              (gnu home services sound)
              (gnu home services niri))
 
-
 (home-environment
   ;; Below is the list of packages that will show up in your
   ;; Home profile, under ~/.guix-home/profile.
@@ -41,17 +40,15 @@
                                       ("ll" . "ls -l")
                                       ("ls" . "ls -p --color=auto")
                                       ("update-home" . "guix home reconfigure ~/guix-config/home/home-configuration.scm")
-                                      ("update-system" . "sudo guix system reconfigure ~/guix-config/systems/stormrage.scm")))))
+                                      ("update-system" . "sudo guix system reconfigure ~/guix-config/systems/stormrage.scm")))
+			   (environment-variables '(("GUIX_PACKAGE_PATH" . "$HOME/guix-config")
+						    ("EDITOR" . "emacs -nw")))))
 		 
                  ;; https://guix.gnu.org/manual/devel/en/html_node/Niri-window-manager.html
                  ;; Check %HOME/.local/share/wayland-sessions/niri.desktop for new entry after guix home reconfigure
                  (service home-niri-service-type)
                  (service home-dbus-service-type)
                  (service home-pipewire-service-type)
-		 ;; (service home-environment-variables-service-type
-                 ;;          (home-environment-variables
-                 ;;            `("XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share"
-                 ;;              "XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share")))
                  (simple-service 'flatpak-env
                     home-environment-variables-service-type
                     `(("XDG_DATA_DIRS" . "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/$USER/.local/share/flatpak/exports/share"))))
