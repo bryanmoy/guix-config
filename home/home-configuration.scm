@@ -27,6 +27,7 @@
                                             "rust:cargo"
                                             "rust-analyzer"
                                             "go@1.25.5"
+                                            "gopls"
                                             "node")))
 
   ;; Below is the list of Home services.  To search for available
